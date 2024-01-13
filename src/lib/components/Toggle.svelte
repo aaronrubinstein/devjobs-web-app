@@ -1,4 +1,4 @@
-<label class="switch">
+<label class="switch" aria-label="Toggle dark/light mode">
     <input type="checkbox">
     <span class="slider"></span>
 </label>

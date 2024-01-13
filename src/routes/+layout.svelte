@@ -10,24 +10,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
 </svelte:head>
 
-<header>
-    <img src="$lib/assets/images/logo.svg" alt="Devjobs logo">
-    <div class="theme-toggle">
-        <img src="$lib/assets/images/icon-sun.svg" alt="Sun icon">
-        <Toggle />
-        <img src="$lib/assets/images/icon-moon.svg" alt="Moon icon">
-    </div>
-</header>
+<div class="container">
+    <header>
+        <img src="$lib/assets/images/logo.svg" alt="Devjobs logo">
+        <div class="theme-toggle">
+            <img src="$lib/assets/images/icon-sun.svg" alt="Sun icon">
+            <Toggle />
+            <img src="$lib/assets/images/icon-moon.svg" alt="Moon icon">
+        </div>
+    </header>
+    
+    <slot />
+</div>
 
-<slot />
 
 <style>
+    .container {
+        max-width: 1150px;
+        padding: 0 20px;
+        margin: 0 auto;
+    }
+    
     header {
-        max-width: 1110px;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin: 44px auto;
+        margin: 44px 0;
     }
 
     .theme-toggle {

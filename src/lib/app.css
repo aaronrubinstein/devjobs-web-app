@@ -26,14 +26,18 @@ body {
 	/* primary colors */
     --violet: #5964E0;
     --light-violet: #939BF4;
+	--white: #FFFFFF;
     
     /* light color palette (default) */	
     --heading-text: #19202D;
     --text: #6E8098;
     --page-bg: #F4F6F8;
     --card-bg: #FFFFFF;
+	--secondary-button-text: #5964E0;
+	--secondary-button: rgba(89, 100, 224, 0.1);
+	--secondary-button-hover: rgba(89, 100, 224, 0.35);
 	
-	min-height: 100dvh;
+	/* min-height: 100dvh; */
 	background-color: var(--page-bg);
 	background-image: url('$lib/assets/images/bg-pattern-header.svg');
 	background-repeat: no-repeat;
@@ -45,4 +49,7 @@ body.dark {
     --text: #9DAEC2;
     --page-bg: #121721;
     --card-bg: #19202D;
+	--secondary-button-text: #FFFFFF;
+	--secondary-button: rgba(255, 255, 255, 0.1)
+	--secondary-button-hover: rgba(255, 255, 255, 0.35)
 }
