@@ -1,0 +1,48 @@
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+*{
+	margin: 0;
+	padding: 0;
+	font: inherit;
+}
+:root {
+  	font-family: 'Kumbh Sans', sans-serif;
+	font-size: 16px;
+}
+button {
+	border: none;
+	background: none;
+	cursor: pointer;
+}
+img, picture, svg, video{
+	max-width: 100%;
+	height: auto;
+	vertical-align: middle;
+}
+
+body {
+	
+	/* primary colors */
+    --violet: #5964E0;
+    --light-violet: #939BF4;
+    
+    /* light color palette (default) */	
+    --heading-text: #19202D;
+    --text: #6E8098;
+    --page-bg: #F4F6F8;
+    --card-bg: #FFFFFF;
+	
+	min-height: 100dvh;
+	background-color: var(--page-bg);
+	background-image: url('$lib/assets/images/bg-pattern-header.svg');
+	background-repeat: no-repeat;
+}
+
+body.dark {
+    /* dark color palette */
+    --heading-text: #FFFFFF;
+    --text: #9DAEC2;
+    --page-bg: #121721;
+    --card-bg: #19202D;
+}
