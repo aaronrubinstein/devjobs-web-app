@@ -1,19 +1,19 @@
 <script>
     export let label;
-    export let width = '100%';
     export let secondary = false;
 </script>
 
 <button 
     type="button"
-    class:secondary
-    style="width: {width};" >
+    class:secondary >
     {label}
 </button>
 
 <style>
     button {
         height: 48px;
+        width: var(--btn-width, 100%);
+        margin: var(--btn-margin, 0);
         border-radius: 5px;
         background: var(--violet);
         font-size: 16px;

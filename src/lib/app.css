@@ -27,6 +27,7 @@ body {
     --violet: #5964E0;
     --light-violet: #939BF4;
 	--white: #FFFFFF;
+	--input-border: rgba(110, 128, 152, 0.2);
     
     /* light color palette (default) */	
     --heading-text: #19202D;
@@ -36,11 +37,13 @@ body {
 	--secondary-button-text: #5964E0;
 	--secondary-button: rgba(89, 100, 224, 0.1);
 	--secondary-button-hover: rgba(89, 100, 224, 0.35);
+	--checkbox-bg: rgba(25, 32, 45, 0.1035);
 	
 	/* min-height: 100dvh; */
 	background-color: var(--page-bg);
 	background-image: url('$lib/assets/images/bg-pattern-header.svg');
 	background-repeat: no-repeat;
+	background-size: 100% 160px;
 }
 
 body.dark {
@@ -50,6 +53,7 @@ body.dark {
     --page-bg: #121721;
     --card-bg: #19202D;
 	--secondary-button-text: #FFFFFF;
-	--secondary-button: rgba(255, 255, 255, 0.1)
-	--secondary-button-hover: rgba(255, 255, 255, 0.35)
+	--secondary-button: rgba(255, 255, 255, 0.1);
+	--secondary-button-hover: rgba(255, 255, 255, 0.35);
+	--checkbox-bg: rgba(255, 255, 255, 0.1035);
 }

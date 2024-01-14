@@ -44,4 +44,10 @@
         justify-content: space-between;
         align-items: center;
     }
+
+    @media (max-width: 1150px) {
+        .container {
+            max-width: 729px;
+        }
+    }
 </style>

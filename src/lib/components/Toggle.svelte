@@ -1,5 +1,10 @@
+<script>
+    const toggle = () => 
+        window.document.body.classList.toggle('dark');
+</script>
+
 <label class="switch" aria-label="Toggle dark/light mode">
-    <input type="checkbox">
+    <input type="checkbox" on:click={toggle}>
     <span class="slider"></span>
 </label>
 
