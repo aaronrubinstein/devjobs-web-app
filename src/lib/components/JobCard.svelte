@@ -13,10 +13,10 @@
     <div class="logo-box" style:background={logoBackground}>
         <img src={logo} alt="{company} logo">
     </div>
-    <p>{postedAt} • {contract}</p>
-    <h1>
+    <p>{postedAt} <span class="bullet"></span> {contract}</p>
+    <h2>
         <a href="/{id}">{position}</a>
-    </h1>
+    </h2>
     <p>{company}</p>
     <p class="location">{location}</p>
 </div>
@@ -49,7 +49,7 @@
         color: var(--text);
     }
 
-    h1 {
+    h2 {
        font-size: 20px;
        font-weight: 700; 
        color: var(--heading-text);
@@ -57,7 +57,7 @@
        cursor: pointer;
     }
 
-    h1:hover {
+    h2:hover {
         color: var(--text);
     }
 
@@ -71,6 +71,12 @@
         font-weight: 700;
         color: var(--violet);
         margin-top: auto;
+    }
+
+    .bullet::after {
+        content: "\2022";
+        margin: 0 8px 0 8px;
+        font-weight: 700;
     }
 
     @media (max-width: 1150px) {

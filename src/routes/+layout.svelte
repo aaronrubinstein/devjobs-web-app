@@ -12,7 +12,9 @@
 
 <div class="container">
     <header>
-        <img src="$lib/assets/images/logo.svg" alt="Devjobs logo">
+        <a href="/">
+            <img src="$lib/assets/images/logo.svg" alt="Devjobs logo">
+        </a>
         <div class="theme-toggle">
             <img src="$lib/assets/images/icon-sun.svg" alt="Sun icon">
             <Toggle />

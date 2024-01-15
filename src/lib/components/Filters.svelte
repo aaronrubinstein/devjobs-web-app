@@ -1,9 +1,16 @@
 <script>
+    import { filterStore } from '$lib/stores.js';
     import Button from '$lib/components/Button.svelte';
-
-    let detailsFilter;
-    let locationFilter;
+    let detailsFilter = '';
+    let locationFilter = '';
     let contractFilter = false;
+
+    $: {
+        $filterStore.details = detailsFilter;
+        $filterStore.location = locationFilter;
+        $filterStore.contract = contractFilter ? 'Full Time' : '';
+    } 
+
 </script>
 
 <div class="container">

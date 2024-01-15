@@ -1,16 +1,21 @@
 <script>
+    import { dataStore, filteredData } from '$lib/stores.js';
     import Filters from '$lib/components/Filters.svelte';
     import JobCard from '$lib/components/JobCard.svelte';
 
     export let data;
-    const { jobs } = data;
+
+    $dataStore = data.jobs.map(job => ({
+        ...job,
+        searchTerms: `${job.position} ${job.company}`
+    }));
 
 </script>
 
 <Filters />
 
 <main>
-    {#each jobs as job}
+    {#each $filteredData as job}
         <JobCard
             id={job.id}
             company={job.company}
