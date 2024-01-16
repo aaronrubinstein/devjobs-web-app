@@ -1,10 +1,18 @@
 <script>
-    const toggle = () => 
-        window.document.body.classList.toggle('dark');
+    import { browser } from '$app/environment';
+
+    let darkMode = (browser && localStorage.getItem('theme') === 'dark') || false;
+    
+    const toggleTheme = () => {
+        let newTheme = darkMode ? 'light' : 'dark';
+        localStorage.setItem('theme', newTheme);
+        document.body.setAttribute('data-theme', newTheme);
+    }
+
 </script>
 
 <label class="switch" aria-label="Toggle dark/light mode">
-    <input type="checkbox" on:click={toggle}>
+    <input type="checkbox" bind:checked={darkMode} on:click={toggleTheme}>
     <span class="slider"></span>
 </label>
 
