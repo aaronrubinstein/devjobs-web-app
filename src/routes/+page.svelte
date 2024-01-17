@@ -43,4 +43,12 @@
         }
     }
 
+    @media (max-width: 750px) {
+        main {
+            grid-template-columns: 1fr;
+            row-gap: 49px;
+            justify-items: center;
+        }
+    }
+
 </style>

@@ -57,4 +57,18 @@ body {
 	background-image: url('$lib/assets/images/bg-pattern-header.svg');
 	background-repeat: no-repeat;
 	background-size: 100% 160px;
-}	
+}
+
+@media (max-width: 768px) {
+	body {
+		background-image: url('$lib/assets/images/bg-pattern-header-tablet.svg');
+		background-size: initial;
+	}
+	
+}
+
+@media (max-width: 375px) {
+	body {
+		background-image: url('$lib/assets/images/bg-pattern-header-mobile.svg');
+	}
+}

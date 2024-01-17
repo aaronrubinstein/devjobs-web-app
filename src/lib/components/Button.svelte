@@ -11,6 +11,7 @@
 
 <style>
     button {
+        display: var(--btn-display, inline-block);
         height: 48px;
         width: var(--btn-width, 100%);
         margin: var(--btn-margin, 0);

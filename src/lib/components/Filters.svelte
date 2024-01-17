@@ -44,7 +44,13 @@
         name="contract-filter" 
         id="contract-filter" >
     <label for="contract-filter"></label>
+    <button class="filter-btn" type="button" aria-label="Open filters">
+        <img src="$lib/assets/images/icon-filter.svg" alt="Filter icon">
+    </button>
     <Button label="Search" />
+    <button type="button" class="search-btn" aria-label="Search">
+        <img class="search-icon-mobile" src="$lib/assets/images/icon-search-mobile.svg" alt="Search icon">
+    </button>
 </div>
 
 <style>
@@ -122,6 +128,10 @@
         margin-left: 16px;
     }
 
+    .filter-btn {
+        display: none;
+    }
+
     @media (max-width: 1150px) {
         .container {
             --btn-width: 80px;
@@ -158,6 +168,63 @@
 
         input[type="checkbox"] {
             margin-left: 20px;
+        }
+
+        .search-button {
+            display: none;
+        }
+    }
+
+    @media (max-width: 750px) {
+        .container {
+            justify-content: space-between;
+            margin-bottom: 57px;
+            --btn-display: none;
+        }
+
+        input.details-filter.wide {
+            display: none;
+        }
+
+        input.details-filter.narrow {
+            display: initial;
+        }
+
+        input.details-filter {
+            flex: 0 1 210px;
+            background-image: none;
+            padding-left: 24px;
+        }
+
+        input.location-filter {
+            display: none;
+        }
+
+        input[type="checkbox"] {
+            display:none
+        }
+
+        .filter-btn {
+            display: block;
+            margin-left: auto;
+        }
+        
+        label {
+            display: none;
+        }
+
+        .search-btn {
+            display: inline-block;
+            width: 48px;
+            height: 48px;
+            border-radius: 5px;
+            background-color: var(--violet);
+            margin: 0 16px 0 24px;
+        }
+
+        .search-icon-mobile {
+            width: 20px;
+            height: 20px;
         }
     }
 

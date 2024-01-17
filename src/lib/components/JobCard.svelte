@@ -85,5 +85,11 @@
         }
     }
 
+    @media (max-width: 750px) {
+        .card {
+            width: 327px;
+        }
+    }
+
 
 </style>

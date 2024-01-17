@@ -230,4 +230,10 @@
         gap: 12px;
     }
 
+    @media (max-width: 1150px) {
+        .footer-content {
+            max-width: 689px;
+        }
+    }
+
 </style>
