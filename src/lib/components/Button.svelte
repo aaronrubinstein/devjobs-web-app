@@ -3,7 +3,8 @@
     export let secondary = false;
 </script>
 
-<button 
+<button
+    on:click
     type="button"
     class:secondary >
     {label}

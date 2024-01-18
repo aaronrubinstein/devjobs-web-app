@@ -5,11 +5,18 @@
     let locationFilter = '';
     let contractFilter = false;
 
-    $: {
+    // Code to auto-filter as user types
+    // $: {
+    //     $filterStore.details = detailsFilter;
+    //     $filterStore.location = locationFilter;
+    //     $filterStore.contract = contractFilter ? 'Full Time' : '';
+    // }
+    
+    const filterData = () => {
         $filterStore.details = detailsFilter;
         $filterStore.location = locationFilter;
         $filterStore.contract = contractFilter ? 'Full Time' : '';
-    } 
+    }
 
 </script>
 
@@ -47,8 +54,8 @@
     <button class="filter-btn" type="button" aria-label="Open filters">
         <img src="$lib/assets/images/icon-filter.svg" alt="Filter icon">
     </button>
-    <Button label="Search" />
-    <button type="button" class="search-btn" aria-label="Search">
+    <Button label="Search" on:click={filterData}/>
+    <button on:click={filterData} type="button" class="search-btn-mobile" aria-label="Search">
         <img class="search-icon-mobile" src="$lib/assets/images/icon-search-mobile.svg" alt="Search icon">
     </button>
 </div>
@@ -128,7 +135,7 @@
         margin-left: 16px;
     }
 
-    .filter-btn {
+    .filter-btn, .search-btn-mobile {
         display: none;
     }
 
@@ -168,10 +175,6 @@
 
         input[type="checkbox"] {
             margin-left: 20px;
-        }
-
-        .search-button {
-            display: none;
         }
     }
 
@@ -213,7 +216,7 @@
             display: none;
         }
 
-        .search-btn {
+        .search-btn-mobile {
             display: inline-block;
             width: 48px;
             height: 48px;
