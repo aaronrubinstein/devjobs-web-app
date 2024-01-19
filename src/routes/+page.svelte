@@ -1,6 +1,7 @@
 <script>
-    import { dataStore, filteredData } from '$lib/stores.js';
+    import { dataStore, filteredData, filterOverlay } from '$lib/stores.js';
     import Filters from '$lib/components/Filters.svelte';
+    import FilterOverlay from '$lib/components/FilterOverlay.svelte';
     import JobCard from '$lib/components/JobCard.svelte';
 
     export let data;
@@ -10,7 +11,17 @@
         searchTerms: `${job.position} ${job.company}`
     }));
 
+    const closeOverlay = e => {
+        if (e.target.id === 'overlay-bg') $filterOverlay = false;
+    }
+
 </script>
+
+{#if $filterOverlay}
+    <div id="overlay-bg" on:click={closeOverlay} on:keyup={closeOverlay} role="button" tabindex="-1">
+        <FilterOverlay />
+    </div>    
+{/if}
 
 <Filters />
 
@@ -34,6 +45,19 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 65px 30px;
+    }
+
+    #overlay-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 3;
+        display: grid;
+        place-items: center;
+        padding: 24px;
     }
 
     @media (max-width: 1150px) {

@@ -1,28 +1,13 @@
 <script>
-    import { filterStore } from '$lib/stores.js';
+    import { filterStore, filterOverlay } from '$lib/stores.js';
     import Button from '$lib/components/Button.svelte';
-    let detailsFilter = '';
-    let locationFilter = '';
-    let contractFilter = false;
 
-    // Code to auto-filter as user types
-    // $: {
-    //     $filterStore.details = detailsFilter;
-    //     $filterStore.location = locationFilter;
-    //     $filterStore.contract = contractFilter ? 'Full Time' : '';
-    // }
-    
-    const filterData = () => {
-        $filterStore.details = detailsFilter;
-        $filterStore.location = locationFilter;
-        $filterStore.contract = contractFilter ? 'Full Time' : '';
-    }
-
+    $: filtersActive = $filterStore.location.length > 0 || $filterStore.fulltime;
 </script>
 
 <div class="container">
     <input 
-        bind:value={detailsFilter}
+        bind:value={$filterStore.details}
         class="details-filter wide"
         type="text"
         name="details-filter"
@@ -30,7 +15,7 @@
         placeholder="Filter by title, companies, expertise..."
         aria-label="Filter by job title, companies, or expertise" >
     <input 
-        bind:value={detailsFilter}
+        bind:value={$filterStore.details}
         class="details-filter narrow"
         type="text"
         name="details-filter-small"
@@ -38,7 +23,7 @@
         placeholder="Filter by title..."
         aria-label="Filter by job title, companies, or expertise" >
     <input 
-        bind:value={locationFilter}
+        bind:value={$filterStore.location}
         class="location-filter"
         type="text"
         name="location-filter"
@@ -46,16 +31,19 @@
         placeholder="Filter by location"
         aria-label="Filter by location" >
     <input 
-        bind:checked={contractFilter}
+        bind:checked={$filterStore.fulltime}
         type="checkbox" 
         name="contract-filter" 
         id="contract-filter" >
     <label for="contract-filter"></label>
-    <button class="filter-btn" type="button" aria-label="Open filters">
+    <button on:click={() => $filterOverlay = true} class="filter-btn" type="button" aria-label="Open filters">
+        {#if filtersActive}
+            <div class="filters-active-dot"></div>
+        {/if}
         <img src="$lib/assets/images/icon-filter.svg" alt="Filter icon">
     </button>
-    <Button label="Search" on:click={filterData}/>
-    <button on:click={filterData} type="button" class="search-btn-mobile" aria-label="Search">
+    <Button label="Search" />
+    <button type="button" class="search-btn-mobile" aria-label="Search">
         <img class="search-icon-mobile" src="$lib/assets/images/icon-search-mobile.svg" alt="Search icon">
     </button>
 </div>
@@ -210,6 +198,16 @@
         .filter-btn {
             display: block;
             margin-left: auto;
+            position: relative;
+        }
+
+        .filters-active-dot {
+            position: absolute;
+            right: -2px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #ff0303;
         }
         
         label {
