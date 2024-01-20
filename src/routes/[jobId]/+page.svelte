@@ -169,7 +169,7 @@
     }
 
     .job-req-item::before {
-        content: "\2022";
+        content: "•";
         color: var(--violet);
         font-weight: 700;
         font-size: 20px;

@@ -74,7 +74,7 @@
     }
 
     .bullet::after {
-        content: "\2022";
+        content: "•";
         margin: 0 8px 0 8px;
         font-weight: 700;
     }
