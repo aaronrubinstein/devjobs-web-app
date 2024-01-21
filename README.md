@@ -15,8 +15,8 @@ This is a solution to the [Devjobs web app challenge on Frontend Mentor](https:/
 
 **Inner Page**
 
-<img src="./solution/inner-page.png" height=100% width=100%>
+<img src="./solution/inner-page.png" height=60% width=60%>
 
 **Mobile**
 
-<img src="./solution/mobile.png" height=40% width=34%>
+<img src="./solution/mobile.png" height=20% width=20%>
