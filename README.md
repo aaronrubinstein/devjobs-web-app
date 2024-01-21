@@ -5,7 +5,7 @@ This is a solution to the [Devjobs web app challenge on Frontend Mentor](https:/
 ### Links
 
 - Solution URL: https://github.com/aaronrubinstein/devjobs-web-app
-- Live Site URL:
+- Live Site URL: https://devjobs-web-app-sigma.vercel.app/
 
 ### Screenshots
 
